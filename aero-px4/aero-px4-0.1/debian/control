@@ -1,0 +1,14 @@
+Source: aero-px4
+Section: unknown
+Priority: optional
+Maintainer: Daniel E Ruano <daniel.e.ruano@intel.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: https://github.com/intel-aero/meta-intel-aero/tree/master/recipes-support/px4-fw/files
+
+Package: aero-px4
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: aero-utils
+Description: Px4 firmware for Intel Aero.
+ This contains the standard firmware for the Intel Aero flight controller.

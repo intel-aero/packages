@@ -1,0 +1,220 @@
+From f0fbba871929c6d6e2242ae95d9ae14cd5985b78 Mon Sep 17 00:00:00 2001
+From: ritul jasuja <ritul.jasuja@intel.com>
+Date: Wed, 18 Oct 2017 10:36:45 +0530
+Subject: [PATCH] Add support for the Aero SPI devices
+
+Include SPI drivers(imu, fpga) as part of kernel(static modules)
+Config variable CONFIG_AERO_SPIDEV controls the support for spi devices
+
+Signed-off-by: ritul jasuja <ritul.jasuja@intel.com>
+---
+ drivers/misc/Kconfig         |  1 +
+ drivers/misc/Makefile        |  1 +
+ .../linux-4.4/drivers/misc/aero-spidev/Kconfig     |  7 +++
+ .../linux-4.4/drivers/misc/aero-spidev/Makefile    |  3 +
+ .../linux-4.4/drivers/misc/aero-spidev/spi_fpga.c  | 69 ++++++++++++++++++++
+ .../linux-4.4/drivers/misc/aero-spidev/spi_imu.c   | 73 ++++++++++++++++++++++
+ 7 files changed, 223 insertions(+)
+ create mode 100644 drivers/misc/aero-spidev/Kconfig
+ create mode 100644 drivers/misc/aero-spidev/Makefile
+ create mode 100644 drivers/misc/aero-spidev/spi_fpga.c
+ create mode 100644 drivers/misc/aero-spidev/spi_imu.c
+
+diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
+index 4bf7d50..3e48ca5 100644
+--- a/drivers/misc/Kconfig
++++ b/drivers/misc/Kconfig
+@@ -537,4 +537,5 @@ source "drivers/misc/mic/Kconfig"
+ source "drivers/misc/genwqe/Kconfig"
+ source "drivers/misc/echo/Kconfig"
+ source "drivers/misc/cxl/Kconfig"
++source "drivers/misc/aero-spidev/Kconfig"
+ endmenu
+diff --git a/drivers/misc/Makefile b/drivers/misc/Makefile
+index 0869e1f..e3522db 100644
+--- a/drivers/misc/Makefile
++++ b/drivers/misc/Makefile
+@@ -57,3 +57,4 @@ obj-$(CONFIG_ECHO)		+= echo/
+ obj-$(CONFIG_VEXPRESS_SYSCFG)	+= vexpress-syscfg.o
+ obj-$(CONFIG_CXL_BASE)		+= cxl/
+ obj-y	+= vlv2_plat_clock.o
++obj-$(CONFIG_AERO_SPIDEV) 	+= aero-spidev/
+\ No newline at end of file
+diff --git a/drivers/misc/aero-spidev/Kconfig b/drivers/misc/aero-spidev/Kconfig
+new file mode 100644
+index 0000000..483845b
+--- /dev/null
++++ b/drivers/misc/aero-spidev/Kconfig
+@@ -0,0 +1,7 @@
++config AERO_SPIDEV
++    tristate "supports spidev modules for aero"
++    help
++      Say Y here if kernel is built for Intel Aero
++
++      To compile this driver as a module, choose M here: the
++      modules will be called spi_fpga.ko, spi_imu.ko
+diff --git a/drivers/misc/aero-spidev/Makefile b/drivers/misc/aero-spidev/Makefile
+new file mode 100644
+index 0000000..38a5f25
+--- /dev/null
++++ b/drivers/misc/aero-spidev/Makefile
+@@ -0,0 +1,2 @@
++obj-$(CONFIG_AERO_SPIDEV)	+= spi_imu.o
++obj-$(CONFIG_AERO_SPIDEV)	+= spi_fpga.o
+diff --git a/drivers/misc/aero-spidev/spi_fpga.c b/drivers/misc/aero-spidev/spi_fpga.c
+new file mode 100644
+index 0000000..301309e
+--- /dev/null
++++ b/drivers/misc/aero-spidev/spi_fpga.c
+@@ -0,0 +1,69 @@
++/******************************************************************************
++ *
++ *   Copyright (C) 2016  Intel Corporation. All rights reserved.
++ *
++ *   This program is free software;  you can redistribute it and/or modify
++ *   it under the terms of the GNU General Public License as published by
++ *   the Free Software Foundation; version 2 of the License.
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY;  without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See
++ *   the GNU General Public License for more details.
++ *
++ *   Author: Venkat Jayaraman <venkat.jayaraman@intel.com>
++ *
++ *****************************************************************************/
++#include <linux/platform_device.h>
++#include <linux/init.h>
++#include <linux/module.h>
++#include <linux/spi/spi.h>
++
++#if (!defined(CONFIG_SPI_SPIDEV) && !defined(CONFIG_SPI_SPIDEV_MODULE))
++	#error SPI_SPIDEV is missing
++#endif
++
++#define FPGA_SPI_BUS	1
++#define FPGA_SPI_CS	1
++#define FPGA_SPI_MZ	4000000
++
++struct spi_board_info fpga_device_info = {
++    .modalias = "spidev",
++    .max_speed_hz = FPGA_SPI_MZ,
++    .bus_num = FPGA_SPI_BUS,
++    .chip_select = FPGA_SPI_CS,
++};
++
++static struct spi_device *spi_device;
++
++static int __init fpga_spidev_init(void)
++{
++    struct spi_master *master;
++
++    master = spi_busnum_to_master(FPGA_SPI_BUS);
++    if(!master){
++        pr_err("SPI master driver not found...return value %d\n", master);
++            return -ENODEV;
++    }
++
++    spi_device = spi_new_device(master, &fpga_device_info);
++
++    if(!spi_device) {
++        pr_err("FPGA spidev register failed!!!\n");
++        return -ENODEV;
++    }
++	pr_info("spidev fpga registered\n");
++    return 0;
++}
++
++
++static void __exit fpga_spidev_exit(void)
++{
++    if(spi_device)
++        spi_unregister_device(spi_device);
++}
++
++module_init(fpga_spidev_init);
++module_exit(fpga_spidev_exit);
++
++MODULE_LICENSE("GPL");
+diff --git a/drivers/misc/aero-spidev/spi_imu.c b/drivers/misc/aero-spidev/spi_imu.c
+new file mode 100644
+index 0000000..1a28a2b
+--- /dev/null
++++ b/drivers/misc/aero-spidev/spi_imu.c
+@@ -0,0 +1,73 @@
++/******************************************************************************
++ *
++ *   Copyright (C) 2016  Intel Corporation. All rights reserved.
++ *
++ *   This program is free software;  you can redistribute it and/or modify
++ *   it under the terms of the GNU General Public License as published by
++ *   the Free Software Foundation; version 2 of the License.
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY;  without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See
++ *   the GNU General Public License for more details.
++ *
++ *   Author: Israel Cepeda <israel.a.cepeda.lopez@intel.com>
++ *
++ *****************************************************************************/
++
++#include <linux/platform_device.h>
++#include <linux/module.h>
++#include <linux/spi/spi.h>
++
++#if (!defined(CONFIG_SPI_SPIDEV) && !defined(CONFIG_SPI_SPIDEV_MODULE))
++	#error SPI_SPIDEV is missing
++#endif
++
++#define pr_fmt(fmt) "spidev-imu: " fmt
++
++#define SPIDEV_SPI_BUS	3
++#define SPIDEV_SPI_CS	0
++#define SPIDEV_SPI_HZ	1000000
++
++static struct spi_board_info imu_board_info __initdata = {
++	.modalias	= "spidev",
++	.bus_num	= SPIDEV_SPI_BUS,
++	.chip_select	= SPIDEV_SPI_CS,
++	.max_speed_hz	= SPIDEV_SPI_HZ,
++};
++
++static struct spi_device *dev;
++
++static int __init spidev_imu_init(void)
++{
++	struct spi_master *master;
++	int err = -ENODEV;
++
++	master = spi_busnum_to_master(SPIDEV_SPI_BUS);
++	if (!master)
++		goto out;
++
++	dev = spi_new_device(master, &imu_board_info);
++	if (!dev)
++		goto out;
++
++	pr_info("spidev registered\n");
++	err = 0;
++
++out:
++	if (err)
++		pr_err("spidev register failed\n");
++
++	return err;
++}
++
++static void __exit spidev_imu_exit(void)
++{
++	if (dev)
++		spi_unregister_device(dev);
++}
++
++module_init(spidev_imu_init);
++module_exit(spidev_imu_exit);
++
++MODULE_LICENSE("GPL");
+-- 
+2.7.4
+

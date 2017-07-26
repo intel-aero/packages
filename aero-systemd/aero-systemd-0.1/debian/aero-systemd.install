@@ -1,0 +1,8 @@
+99-usb0.network etc/systemd/network/
+firstboot-networkmanager.service lib/systemd/system/
+init_led_start.service lib/systemd/system/
+shutdown-led-notify.service lib/systemd/system/
+init_led_complete.service lib/systemd/system/
+init_complete.sh usr/sbin/
+init_start.sh usr/sbin/
+firstboot-networkmanager-setup usr/sbin/

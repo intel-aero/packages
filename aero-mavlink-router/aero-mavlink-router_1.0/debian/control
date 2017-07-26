@@ -1,0 +1,13 @@
+Source: mavlink-router
+Section: net
+Priority: optional
+Maintainer: Daniel E Ruano <daniel.e.ruano@intel.com>
+Build-Depends: debhelper (>=9), dh-systemd (>= 1.5), dh-autoreconf, python-pip, git
+Standards-Version: 3.9.6
+Homepage: https://github.com/01org/mavlink-router
+
+Package: aero-mavlink-router
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python-future
+Description: routes MAVLink packets
+ mavlink-router moves MAVLink packets between network and physical interfaces.

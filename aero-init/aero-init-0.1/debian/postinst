@@ -1,0 +1,1 @@
+printf "%s\n" spi_fpga spi_imu spi_can >> /etc/modules-load.d/spidev.conf

@@ -1,0 +1,7 @@
+aero-led-ctrl usr/bin
+aero-fan-ctrl usr/bin
+aerofc-update.sh usr/sbin
+px_uploader.py usr/sbin
+aero-get-version.py usr/sbin
+#aero-reboot-update.py usr/sbin
+aero-bios-update usr/sbin

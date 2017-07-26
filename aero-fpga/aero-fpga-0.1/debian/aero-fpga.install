@@ -1,0 +1,4 @@
+jam usr/bin
+aero-compute-board.jam etc/fpga
+aero-rtf.jam etc/fpga
+aero-rtf-recovery.jam etc/fpga

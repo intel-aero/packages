@@ -1,0 +1,11 @@
+aero-init (0.1-2) unstable; urgency=medium
+
+  * Added spidev module loading.
+
+ -- Daniel E Ruano <daniel.e.ruano@intel.com>  Wed, 02 Aug 2017 15:44:55 -0700
+
+aero-init (0.1-1) unstable; urgency=medium
+
+  * Initial release
+
+ -- Daniel E Ruano <daniel.e.ruano@intel.com>  Thu, 20 Jul 2017 15:29:37 -0700

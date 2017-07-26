@@ -1,0 +1,12 @@
+Source: firmware-atomisp
+Section: unknown
+Priority: optional
+Maintainer: Ritul Jasuja <ritul.jasuja@intel.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: https://github.com/intel-aero/meta-intel-aero-base/tree/master/recipes-kernel/linux/linux-yocto
+
+Package: firmware-atomisp
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Firmware for AtomISP

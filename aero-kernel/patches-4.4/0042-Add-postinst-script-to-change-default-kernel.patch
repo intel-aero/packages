@@ -1,0 +1,31 @@
+From 62f4f356a0edb2b0e415c55c9a0a7d3e50206401 Mon Sep 17 00:00:00 2001
+From: Avinash Reddy Palleti <avinash.reddy.palleti@intel.com>
+Date: Wed, 1 Nov 2017 07:36:59 +0530
+Subject: [PATCH] Add postinst script to change default kernel
+
+Adding postinst script to udpate grub
+---
+ debian/postinst | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+ create mode 100644 debian/postinst
+
+diff --git a/debian/postinst b/debian/postinst
+new file mode 100644
+index 0000000..9310067
+--- /dev/null
++++ b/debian/postinst
+@@ -0,0 +1,11 @@
++#!/bin/sh 
++# postinst script for aero-utils 
++# 
++# Update the default kernel in grub 
++ 
++set -e 
++sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT="Advanced options for Ubuntu>Ubuntu, with Linux 4.4.76-aero-1.2"/' /etc/default/grub 
++sed -i 's/GRUB_HIDDEN_TIMEOUT=0/#GRUB_HIDDEN_TIMEOUT=0/' /etc/default/grub 
++update-grub 
++exit 0 
++
+-- 
+2.7.4
+

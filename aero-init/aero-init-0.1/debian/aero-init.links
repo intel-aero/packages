@@ -1,0 +1,5 @@
+etc/init.d/ds4.sh  etc/rc1.d/S10ds4
+etc/init.d/ds4.sh  etc/rc2.d/S10ds4
+etc/init.d/ds4.sh  etc/rc3.d/S10ds4
+etc/init.d/ds4.sh  etc/rc4.d/S10ds4
+etc/init.d/ds4.sh  etc/rc5.d/S10ds4

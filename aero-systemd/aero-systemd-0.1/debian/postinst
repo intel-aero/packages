@@ -1,0 +1,6 @@
+systemctl daemon-reload
+systemctl restart systemd-networkd
+systemctl enable firstboot-networkmanager
+systemctl enable init_led_complete
+systemctl enable init_led_start
+systemctl enable shutdown-led-notify

@@ -1,0 +1,14 @@
+Source: aero-ardupilot
+Section: unknown
+Priority: optional
+Maintainer: Daniel E Ruano <daniel.e.ruano@intel.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: https://github.com/intel-aero
+
+Package: aero-ardupilot
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: aero-utils
+Description: Ardupilot firmware for Intel Aero.
+ This contains the Ardupilot specific firmware for the Intel Aero flight controller.

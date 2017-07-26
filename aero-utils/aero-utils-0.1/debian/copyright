@@ -1,0 +1,17 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: aero-utils
+Source: https://github.com/intel-aero/meta-intel-aero
+
+Files: *
+Copyright: 2016 Intel Corporation
+License: GPL-2
+
+Files: aerofc-update.sh
+	   px_uploader.py
+Copyright: 2016 Intel Corporation
+		   2012-2017 PX4 Development Team
+License: BSD-3-clause
+
+Files: debian/*
+Copyright: 2017 Intel Corporation
+License: Apache-2.0

@@ -1,0 +1,11 @@
+aero-bios (0.1-2) unstable; urgency=medium
+
+  * Bios 10.00.13
+
+ -- Daniel E Ruano <daniel.e.ruano@intel.com>  Mon, 07 Aug 2017 15:25:13 -0700
+
+aero-bios (0.1-1) unstable; urgency=medium
+
+  * Initial release
+
+ -- Daniel E Ruano <daniel.e.ruano@intel.com>  Thu, 03 Aug 2017 11:32:18 -0700

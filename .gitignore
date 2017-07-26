@@ -1,0 +1,10 @@
+*.deb
+*.dsc
+*.debian.tar.xz
+*.orig.tar.xz
+*.changes
+*.build
+*.pyc
+*.c
+src/
+packages/

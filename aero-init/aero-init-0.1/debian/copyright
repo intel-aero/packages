@@ -1,0 +1,11 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: aero-utils
+Source: https://github.com/intel-aero/meta-intel-aero-base
+
+Files: *
+Copyright: 2017 Intel Corporation
+License: GPL-2
+
+Files: debian/*
+Copyright: 2017 Intel Corporation
+License: Apache-2.0

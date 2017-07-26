@@ -1,0 +1,55 @@
+From c17a91c3d7bc1720241c9c22828f964c62b55427 Mon Sep 17 00:00:00 2001
+From: Huiquan Zhong <huiquan.zhong@intel.com>
+Date: Mon, 28 Sep 2015 17:58:31 +0800
+Subject: [PATCH 05/38] dma: dw: remove ->shutdown() hook
+
+Don't touch DMA register as LPSS maybe power gated in ->shutdown() hook.
+
+Signed-off-by: Huiquan Zhong <huiquan.zhong@intel.com>
+---
+ drivers/dma/dw/platform.c | 22 ----------------------
+ 1 file changed, 22 deletions(-)
+
+diff --git a/drivers/dma/dw/platform.c b/drivers/dma/dw/platform.c
+index 34bc5ac..9f24ebd 100644
+--- a/drivers/dma/dw/platform.c
++++ b/drivers/dma/dw/platform.c
+@@ -240,27 +240,6 @@ static int dw_remove(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
+-static void dw_shutdown(struct platform_device *pdev)
+-{
+-	struct dw_dma_chip *chip = platform_get_drvdata(pdev);
+-
+-	/*
+-	 * We have to call dw_dma_disable() to stop any ongoing transfer. On
+-	 * some platforms we can't do that since DMA device is powered off.
+-	 * Moreover we have no possibility to check if the platform is affected
+-	 * or not. That's why we call pm_runtime_get_sync() / pm_runtime_put()
+-	 * unconditionally. On the other hand we can't use
+-	 * pm_runtime_suspended() because runtime PM framework is not fully
+-	 * used by the driver.
+-	 */
+-	pm_runtime_get_sync(chip->dev);
+-	dw_dma_disable(chip);
+-	pm_runtime_put_sync_suspend(chip->dev);
+-
+-	clk_disable_unprepare(chip->clk);
+-	if (chip->clk)
+-		clk_disable_unprepare(chip->clk);
+-}
+ 
+ #ifdef CONFIG_OF
+ static const struct of_device_id dw_dma_of_id_table[] = {
+@@ -323,7 +302,6 @@ static const struct dev_pm_ops dw_dev_pm_ops = {
+ static struct platform_driver dw_driver = {
+ 	.probe		= dw_probe,
+ 	.remove		= dw_remove,
+-	.shutdown       = dw_shutdown,
+ 	.driver = {
+ 		.name	= DRV_NAME,
+ 		.pm	= &dw_dev_pm_ops,
+-- 
+2.7.4
+
