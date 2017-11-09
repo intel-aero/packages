@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: camera-streaming-daemon
+Source: https://github.com/01org/camera-streaming-daemon
+
+Files: *
+Copyright: 2016-2017 Intel Corporation
+License: Apache-2.0
+ /usr/share/common-licenses/Apache-2.0

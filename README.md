@@ -27,3 +27,8 @@ To patch the kernel with the patches in aero-kernel/patches, run `make kernel-pa
 To build the kernel, run `make kernel`.
 
 Clean kernel: `make kernel-clean`
+
+#### Camera Streaming Daemon
+Install librealsense alongwith Camera streaming daemon package(aero-camera-streaming-daemon) from:
+			https://github.com/IntelRealSense/librealsense
+For RS200, install the legacy branch of librealsense(librealsense v1)
