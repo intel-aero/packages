@@ -1,0 +1,9 @@
+language: generic
+
+services: docker
+
+before_install:
+ - CONTAINER=$(docker run -it -d -v $PWD:/build ubuntu:16.04 /bin/bash)
+ - docker exec -i $CONTAINER /bin/bash -c "apt-get update -qq && apt-get install -y -qq gnupg git equivs lintian devscripts build-essential bc python-future dh-systemd dh-autoreconf wget"
+script:  
+ - docker exec -i $CONTAINER /bin/bash -c "cd /build && scripts/build.sh"
