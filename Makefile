@@ -29,6 +29,7 @@ place-source:
 	cp src/meta-intel-aero/recipes-support/ardupilot-fw/files/* aero-ardupilot/aero-ardupilot-0.1/
 	cp src/meta-intel-aero/recipes-support/jam-stapl/jam-stapl/* aero-fpga/aero-fpga-0.1/
 	cp src/meta-intel-aero-base/recipes-core/initscripts-aero/files/* aero-init/aero-init-0.1/
+	cp src/meta-intel-aero-base/recipes-support/fix-cameras-enumeration-order/files/* aero-init/aero-init-0.1/
 	cp src/meta-intel-aero/recipes-support/px4-fw/files/* aero-px4/aero-px4-0.1
 	cp src/sample-apps/spidev-app/* aero-spi-xfer/aero-spi-xfer-0.1/
 	cp src/meta-intel-aero-base/recipes-support/scripts/files/* aero-utils/aero-utils-0.1
