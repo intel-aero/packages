@@ -1,0 +1,12 @@
+Index: aero-mavlink-router_1.0/mavlink-router.service.in
+===================================================================
+--- aero-mavlink-router_1.0.orig/mavlink-router.service.in
++++ aero-mavlink-router_1.0/mavlink-router.service.in
+@@ -3,6 +3,7 @@ Description=MAVLink Router
+ 
+ [Service]
+ Type=simple
++ExecStartPre=/bin/bash -c 'echo 4 > /sys/class/tty/ttyS1/rx_trig_bytes'
+ ExecStart=@bindir@/mavlink-routerd
+ Restart=on-failure
+ 
