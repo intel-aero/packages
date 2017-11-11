@@ -1,3 +1,9 @@
+aero-bios (0.1-3) unstable; urgency=medium
+
+ * Bump pkg version
+
+ -- Anselmo L. S. Melo <anselmo.melo@intel.com>  Fri, 10 Nov 2017 16:41:00 -0800
+
 aero-bios (0.1-2) unstable; urgency=medium
 
   * Bios 10.00.13
