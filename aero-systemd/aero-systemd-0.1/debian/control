@@ -1,13 +1,13 @@
 Source: aero-systemd
-Section: unknown
+Section: embedded
 Priority: optional
 Maintainer: Ritul Jasuja <ritul.jasuja@intel.com>
 Build-Depends: debhelper (>=9)
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: https://github.com/intel-aero
 
 Package: aero-systemd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Systemd bootup services
-XBCS-meta-intel-aero-base-revision: 2c903169e4745fcdaf8d0e54b5f5c6158eeb220c
+ Configure and initialize system services

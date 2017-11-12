@@ -3,7 +3,7 @@ Section: net
 Priority: optional
 Maintainer: Daniel E Ruano <daniel.e.ruano@intel.com>
 Build-Depends: debhelper (>=9), dh-systemd (>= 1.5), dh-autoreconf, python-pip, git
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: https://github.com/01org/mavlink-router
 
 Package: aero-mavlink-router

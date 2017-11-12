@@ -1,9 +1,9 @@
 Source: aero-px4
-Section: unknown
+Section: embedded
 Priority: optional
 Maintainer: Daniel E Ruano <daniel.e.ruano@intel.com>
 Build-Depends: debhelper (>=9)
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: https://github.com/intel-aero/meta-intel-aero/tree/master/recipes-support/px4-fw/files
 
 Package: aero-px4

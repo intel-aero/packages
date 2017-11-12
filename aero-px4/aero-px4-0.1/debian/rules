@@ -25,5 +25,3 @@
 
 override_dh_fixperms:
 	dh_fixperms
-	chmod 0755 nuttx-aerofc-v1-default.px4
-	chmod 0644 LICENSE.md

@@ -1,13 +1,14 @@
 Source: aero-fpga
-Section: unknown
+Section: embedded
 Priority: optional
 Maintainer: Daniel E Ruano <daniel.e.ruano@intel.com>
 Build-Depends: debhelper (>=9)
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: https://github.com/intel-aero
 
 Package: aero-fpga
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: JAM Player to flash Intel Aero FPGA.
- This package includes the jam-stapl program to reprogram the FPGA on the Intel Aero.
+ This package includes the jam-stapl program to reprogram the FPGA on the
+ Intel Aero.

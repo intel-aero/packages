@@ -5,7 +5,9 @@ Source: https://github.com/intel-aero/meta-intel-aero-base
 Files: *
 Copyright: 2017 Intel Corporation
 License: GPL-2
+ /usr/share/common-licenses/GPL-2
 
 Files: debian/*
 Copyright: 2017 Intel Corporation
 License: Apache-2.0
+ /usr/share/common-licenses/Apache-2.0

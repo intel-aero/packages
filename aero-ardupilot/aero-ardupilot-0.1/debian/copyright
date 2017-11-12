@@ -3,9 +3,11 @@ Upstream-Name: ardupilot-fw
 Source: https://github.com/intel-aero/meta-intel-aero
 
 Files: *
-Copyright: 2017 Intel Corporation
+Copyright: 2016 ArduPilot Dev Team
 License: GPL-3+
+ /usr/share/common-licenses/GPL-3
 
 Files: debian/*
 Copyright: 2017 Intel Corporation
 License: Apache-2.0
+ /usr/share/common-licenses/Apache-2.0

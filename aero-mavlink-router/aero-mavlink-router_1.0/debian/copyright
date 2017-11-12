@@ -5,7 +5,4 @@ Source: https://github.com/01org/mavlink-router
 Files: *
 Copyright: 2016-2017 Intel Corporation
 License: Apache-2.0
-
-Files: config/*
-Copyright: 2016 Intel Corporation
-License: GPL-2
+ /usr/share/common-licenses/Apache-2.0

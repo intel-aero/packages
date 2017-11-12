@@ -1,9 +1,9 @@
 Source: aero-init
-Section: unknown
+Section: embedded
 Priority: optional
 Maintainer: Daniel E Ruano <daniel.e.ruano@intel.com>
 Build-Depends: debhelper (>=9)
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: https://github.com/intel-aero
 
 Package: aero-init
@@ -11,4 +11,3 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Contains several init scripts for the Intel Aero.
  Includes the startup script to power up the Intel Realsense camera.
-XBCS-meta-intel-aero-base-revision: fbaac46f0128fd6e343dcdbed142b870eb6866a4

@@ -1,13 +1,13 @@
 Source: aero-utils
-Section: unknown
+Section: embedded
 Priority: optional
 Maintainer: Daniel E Ruano <daniel.e.ruano@intel.com>
 Build-Depends: debhelper (>=9)
-Standards-Version: 3.9.6
+Standards-Version: 3.9.7
 Homepage: https://github.com/intel-aero/meta-intel-aero-base/tree/master/recipes-support/scripts
 
 Package: aero-utils
 Architecture: all
-Depends: ${misc:Depends}, bash, python-serial, aero-spi-xfer
+Depends: ${misc:Depends}, bash (>=4.3), python, python-serial, aero-spi-xfer
 Description: Collection of Intel Aero RTF utilities.
  Includes several scripts and programs.
