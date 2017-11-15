@@ -8,6 +8,6 @@ Homepage: https://github.com/intel-aero/meta-intel-aero-base/tree/master/recipes
 
 Package: aero-spi-xfer
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, linux-headers-4.4.76-aero-1.2
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: SPI data transfer for Intel Aero
  SPI communication for Intel Aero.
