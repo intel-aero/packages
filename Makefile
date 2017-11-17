@@ -37,6 +37,7 @@ place-source:
 	cp src/sample-apps/spidev-app/* aero-spi-xfer/aero-spi-xfer-0.1/
 	cp src/meta-intel-aero-base/recipes-support/scripts/files/* aero-utils/aero-utils-0.1
 	sed -i 's/\/boot\/BIOSUPDATE.fv/\/boot\/efi\/BIOSUPDATE.fv/' aero-utils/aero-utils-0.1/aero-bios-update
+	sed -i 's/usleep 50000/sleep 0.05/' aero-utils/aero-utils-0.1/aero-led-ctrl
 	cp src/meta-intel-aero-base/recipes-support/aero-bios/files/* aero-bios/aero-bios-0.1/
 	cp src/meta-intel-aero-base/recipes-support/notify-led/files/* aero-systemd/aero-systemd-0.1/
 	cp src/meta-intel-aero/recipes-connectivity/networkmanager/networkmanager/firstboot-networkmanager* aero-systemd/aero-systemd-0.1/
