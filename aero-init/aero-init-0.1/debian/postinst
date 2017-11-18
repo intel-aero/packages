@@ -1,3 +1,1 @@
 printf "%s\n" spi_fpga spi_imu spi_can >> /etc/modules-load.d/spidev.conf
-gsettings set com.canonical.indicator.session suppress-logout-restart-shutdown true
-sed -i 's/#HandlePowerKey=poweroff/HandlePowerKey=poweroff/' /etc/systemd/logind.conf
