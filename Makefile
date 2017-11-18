@@ -2,7 +2,6 @@ meta-intel-aero-rev = 70cee044b251c1376732fe07ee359e9d93149f5f
 meta-intel-aero-base-rev = 0c9f7a359c71f3c8b9f47efede194da51ccaefd7
 sample-apps-rev = master
 mavlink-router-rev = master
-camera-streaming-daemon-rev = master
 
 .PHONY: all clean collect aero-system download-source place-source source
 
@@ -24,10 +23,8 @@ download-source:
 	git clone https://github.com/01org/mavlink-router.git src/mavlink-router
 	git -C src/mavlink-router checkout $(mavlink-router-rev)
 	git -C src/mavlink-router submodule update --init --recursive
-	git clone https://github.com/01org/camera-streaming-daemon.git src/camera-streaming-daemon
-	git -C src/camera-streaming-daemon checkout ${camera-streaming-daemon-rev}
-	git -C src/camera-streaming-daemon submodule update --init --recursive
 
+	
 place-source: 
 	cp src/meta-intel-aero/recipes-support/ardupilot-fw/files/* aero-ardupilot/aero-ardupilot-0.1/
 	cp src/meta-intel-aero/recipes-support/jam-stapl/jam-stapl/* aero-fpga/aero-fpga-0.1/
@@ -47,8 +44,6 @@ place-source:
 	sed -i 's/apn \$$MODEM_APN_NAME autoconnect yes/autoconnect yes apn \$$MODEM_APN_NAME/' aero-systemd/aero-systemd-0.1/firstboot-networkmanager-setup
 	rsync -a --exclude='.*' src/mavlink-router/* aero-mavlink-router/aero-mavlink-router_1.0/
 	rsync src/meta-intel-aero/recipes-support/mavlink-router/files/* aero-mavlink-router/aero-mavlink-router_1.0/config/
-	rsync -a --exclude='.*' src/camera-streaming-daemon/* aero-camera-streaming-daemon/aero-camera-streaming-daemon_1.0/
-	rsync src/meta-intel-aero/recipes-support/camera-streaming-daemon/files/* aero-camera-streaming-daemon/aero-camera-streaming-daemon_1.0/config/
 	
 	cd aero-ardupilot/aero-ardupilot-0.1/ && tar caf ../aero-ardupilot_0.1.orig.tar.xz . --exclude debian
 	cd aero-fpga/aero-fpga-0.1/ && tar caf ../aero-fpga_0.1.orig.tar.xz . --exclude debian
@@ -60,13 +55,11 @@ place-source:
 	cd aero-bios/aero-bios-0.1/ && tar caf ../aero-bios_0.1.orig.tar.xz . --exclude debian
 	cd aero-systemd/aero-systemd-0.1/ && tar caf ../aero-systemd_0.1.orig.tar.xz . --exclude debian
 	cd firmware-atomisp/firmware-atomisp-0.1/ && tar caf ../firmware-atomisp_0.1.orig.tar.xz . --exclude debian
-	cd aero-camera-streaming-daemon/aero-camera-streaming-daemon_1.0 && tar caf ../camera-streaming-daemon_1.0.orig.tar.gz . --exclude debian
 	
 	$(eval MIA_SHA= $(shell git -C src/meta-intel-aero/ rev-parse HEAD))
 	$(eval MIAB_SHA= $(shell git -C src/meta-intel-aero-base/ rev-parse HEAD))
 	$(eval SA_SHA= $(shell git -C src/sample-apps/ rev-parse HEAD))
 	$(eval MR_SHA= $(shell git -C src/mavlink-router/ rev-parse HEAD))
-	$(eval MC_SHA= $(shell git -C src/camera-streaming-daemon/ rev-parse HEAD))
 	
 	python scripts/insert_commit.py aero-ardupilot/aero-ardupilot-0.1/debian/control meta-intel-aero-revision $(MIA_SHA)
 	python scripts/insert_commit.py aero-fpga/aero-fpga-0.1/debian/control meta-intel-aero-revision $(MIA_SHA)
@@ -77,7 +70,6 @@ place-source:
 	python scripts/insert_commit.py aero-mavlink-router/aero-mavlink-router_1.0/debian/control meta-intel-aero-base-revision $(MR_SHA)
 	python scripts/insert_commit.py aero-systemd/aero-systemd-0.1/debian/control meta-intel-aero-base-revision $(MIA_SHA)
 	python scripts/insert_commit.py firmware-atomisp/firmware-atomisp-0.1/debian/control meta-intel-aero-base-revision $(MIAB_SHA)
-	python scripts/insert_commit.py aero-camera-streaming-daemon/aero-camera-streaming-daemon_1.0/debian/control meta-intel-aero-revision $(MC_SHA)
 	
 source:
 	$(MAKE) download-source
