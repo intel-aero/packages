@@ -1,0 +1,11 @@
+--- a/aero-bios-update
++++ b/aero-bios-update
+@@ -9,7 +9,7 @@ usage() {
+ 
+ bios=${1:-/etc/bios/BIOSUPDATE.fv}
+ 
+-cp ${bios} /boot/BIOSUPDATE.fv
++cp ${bios} /boot/efi/BIOSUPDATE.fv
+ 
+ echo "Bios update set up to take place on next boot"
+ echo "It's recommended to have a monitor plugged on hdmi"

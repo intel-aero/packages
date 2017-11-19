@@ -1,0 +1,3 @@
+SRCURL="$GH_INTEL_AERO_META_INTEL_AERO_BASE_URL|$GH_INTEL_AERO_META_INTEL_AERO_BASE_REV"
+SRCPATH="./src/meta-intel-aero-base/recipes-core/initscripts-aero/files/*
+         ./src/meta-intel-aero-base/recipes-support/fix-cameras-enumeration-order/files/"

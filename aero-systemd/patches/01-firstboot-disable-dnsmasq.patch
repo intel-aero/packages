@@ -1,0 +1,11 @@
+--- a/firstboot-networkmanager-setup
++++ b/firstboot-networkmanager-setup
+@@ -25,7 +25,7 @@ while [ 1 ]; do
+ done
+ 
+ # Let NetworkManager start dnsmasq with the right configuration file
+-systemctl disable dnsmasq
++systemctl disable dnsmasq || /bin/true
+ systemctl stop dnsmasq || /bin/true
+ 
+ # systemd is creating this file as symbolic link and taking care of if, not

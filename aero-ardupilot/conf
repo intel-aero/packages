@@ -1,0 +1,2 @@
+SRCURL="$GH_INTEL_AERO_META_INTEL_AERO_URL|$GH_INTEL_AERO_META_INTEL_AERO_REV"
+SRCPATH="./src/meta-intel-aero/recipes-support/ardupilot-fw/files/*"

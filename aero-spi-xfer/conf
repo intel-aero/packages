@@ -1,0 +1,2 @@
+SRCURL="$GH_INTEL_AERO_SAMPLE_APPS_URL|$GH_INTEL_AERO_SAMPLE_APPS_REV"
+SRCPATH="./src/sample-apps/spidev-app/*"

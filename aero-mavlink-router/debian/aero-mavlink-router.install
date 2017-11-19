@@ -1,0 +1,2 @@
+main.conf etc/mavlink-router
+mavlink-routerd.sh etc/init.d

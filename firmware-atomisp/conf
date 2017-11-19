@@ -1,0 +1,2 @@
+SRCURL="$GH_INTEL_AERO_META_INTEL_AERO_BASE_URL|$GH_INTEL_AERO_META_INTEL_AERO_BASE_REV"
+SRCPATH="./src/meta-intel-aero-base/recipes-kernel/linux/linux-yocto/shisp_2401a0_v21.bin"

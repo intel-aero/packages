@@ -1,0 +1,11 @@
+--- a/firstboot-networkmanager-setup
++++ b/firstboot-networkmanager-setup
+@@ -30,7 +30,7 @@ systemctl stop dnsmasq || /bin/true
+ 
+ # systemd is creating this file as symbolic link and taking care of if, not
+ # letting netowrkmanager update it with dns from modem of wifi client mode.
+-rm /etc/resolv.conf || /bin/true
++#rm /etc/resolv.conf || /bin/true
+ 
+ # remove all system connections
+ rm /etc/NetworkManager/system-connections/* || /bin/true

@@ -1,0 +1,11 @@
+--- a/firstboot-networkmanager-setup
++++ b/firstboot-networkmanager-setup
+@@ -44,7 +44,7 @@ nmcli con modify hotspot ipv4.addresses 192.168.8.1/24
+ nmcli con up hotspot
+ 
+ # Modem
+-nmcli con add type gsm ifname '*' con-name modem apn $MODEM_APN_NAME autoconnect yes
++nmcli con add type gsm ifname '*' con-name modem autoconnect yes apn $MODEM_APN_NAME
+ nmcli con up modem || /bin/true
+ 
+ # Make sure this script just run once

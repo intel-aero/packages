@@ -1,0 +1,5 @@
+SRCURL="$GH_INTEL_AERO_META_INTEL_AERO_BASE_URL|$GH_INTEL_AERO_META_INTEL_AERO_BASE_REV \
+	$GH_INTEL_AERO_META_INTEL_AERO_URL|$GH_INTEL_AERO_META_INTEL_AERO_REV"
+SRCPATH="./src/meta-intel-aero-base/recipes-support/notify-led/files/* \
+         ./src/meta-intel-aero/recipes-connectivity/networkmanager/networkmanager/firstboot-networkmanager* \
+         ./src/meta-intel-aero/recipes-core/systemd/systemd/99-usb0.network"
