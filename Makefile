@@ -14,6 +14,9 @@ build/aero-system_*.deb:
 	mkdir -p build
 	cd build && equivs-build ../aero-system/aero-system
 
+build/linux-image*.deb:
+	./scripts/build-kernel.sh
+
 build/%.deb:
 	./scripts/build-pkg.sh $(shell basename $@ .deb | cut -f 1 -d _)
 
@@ -36,21 +39,7 @@ place-source:
 source:
 	$(MAKE) place-source
 	
-kernel-source:
-	cd aero-kernel && wget http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz
-	cd aero-kernel && wget https://launchpadlibrarian.net/332711443/linux_4.4.0-92.115.diff.gz
-	cd aero-kernel && tar -xf linux_4.4.0.orig.tar.gz
-	cd aero-kernel && gunzip linux_4.4.0-92.115.diff.gz
-	cd aero-kernel/linux-4.4 && patch -p1 < ../linux_4.4.0-92.115.diff
-	
-kernel-patch:
-	cd aero-kernel/linux-4.4 && for i in `find ../patches-4.4/ -name "*.patch" | sort` ; do patch -p1 < $$i ; done
-	touch aero-kernel/linux-4.4/.scmversion
-	cp aero-kernel/patches-4.4/defconfig aero-kernel/linux-4.4/.config
-	cd aero-kernel/linux-4.4 && yes '' | make oldconfig
-	
-kernel:
-	cd aero-kernel/linux-4.4 && make deb-pkg -j5
+kernel: build/linux-image*.deb
 
 kernel-clean:
 	rm aero-kernel/linux_4.4.0.orig.tar.gz
