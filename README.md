@@ -4,28 +4,43 @@
 
 ## Building
 
-### Automatic process to build all packages (recommended)
+### All packages
 
-Use `scripts/build.sh` to build all packages and place the deb files into a `packages/` directory.
+`make`
 
-### Manual process
-#### Source setup
-If you just got the fresh git directory, you need to set it up for building first.
-To download the upstream sources and place them where they're needed, run `make source`.
-Once you do that everything will be in place for building.
-#### Building
-After the sources are in place, you can build all packages by just calling `make`.
+### Only the Linux kernel 4.4 with patches
 
-To collect all the .deb files into a packages/ folder you can run `make collect`.
+`make kernel`
 
-If you want to build a package invidually you can just go into its folder and run the required build command.
+### All aero-* packages except the kernel
 
-#### The Kernel
-To download the clean kernel source, run `make kernel-source`.
+`make aero-packages`
 
-To patch the kernel with the patches in aero-kernel/patches, run `make kernel-patch`.
-(Any patch errors will result in .rej files in next to the target)
+### Individual packages
 
-To build the kernel, run `make kernel`.
+You can build individual patches by executing:
 
-Clean kernel: `make kernel-clean`
+```
+./scripts/build-pkg.sh PACKAGE-NAME
+```
+
+Where PACKAGE-NAME matches the name of the directory where the package metadata is.
+
+### Collect
+
+`make collect` makes all deb files available in a `packages/` directory.
+
+### Cleanup
+
+`make clean` cleans up the build/ directory
+
+`make cleanall` removes all build and source files
+
+## Utils
+
+`./scripts/update-pkg-changelog.sh` is a helper to update the debian/changelog file
+using Debian helper tools (thus, it requires such tools available in your system).
+
+## Updating meta-intel-aero and mavlink-router revisions
+
+New revisions sha1 must be added to the configuration file scripts/conf.
