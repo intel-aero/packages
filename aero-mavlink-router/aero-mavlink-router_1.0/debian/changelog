@@ -1,3 +1,9 @@
+mavlink-router (1.0-5) xenial; urgency=medium
+
+  * Remove python-pip from Build-Depends
+
+ -- Ritul Jasuja<ritul.jasuja@intel.com>  Tue, 21 Nov 2017 11:18:55 +0530
+
 mavlink-router (1.0-4) xenial; urgency=medium
 
   * Update dependency list
