@@ -11,3 +11,4 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Contains several init scripts for the Intel Aero.
  Includes the startup script to power up the Intel Realsense camera.
+XBCS-meta-intel-aero-base-revision: {meta-intel-aero-base-rev}

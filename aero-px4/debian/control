@@ -12,3 +12,4 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: aero-utils
 Description: Px4 firmware for Intel Aero.
  This contains the standard firmware for the Intel Aero flight controller.
+XBCS-meta-intel-aero-revision: {meta-intel-aero-rev}

@@ -11,3 +11,4 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Firmware for AtomISP
  AtomISP Firmware required by Intel (R) Aero RTF Drone cameras
+XBCS-meta-intel-aero-base-revision: {meta-intel-aero-base}

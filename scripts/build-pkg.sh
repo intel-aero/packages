@@ -81,7 +81,7 @@ for REPO in $CONF_SRC_URL; do
 		cd $CLONENAME && git fetch && cd ..
 	fi
 	# Because both git clone --recursive and git clone --recurse-submodules fails on CI :(
-	cd $CLONENAME && git checkout $REV && git submodule update --init --recursive && cd .. || exit 1
+	cd $CLONENAME && git checkout $REV && git submodule update --init --recursive && git rev-parse HEAD > $BUILD_DIR/$CLONENAME-rev && cd .. || exit 1
 done
 cd ..
 
@@ -93,6 +93,11 @@ for SRC in $CONF_SRC_PATH; do
                exit 1
        fi
        rsync -a --exclude=".*" $SRC $PKG_OUTPUT_DIR || exit 1
+done
+
+#XBCS tag
+for REV in $BUILD_DIR/*-rev; do
+	sed -i 's/{'$(basename $REV)'}/'$(cat $REV)'/' $PKG_OUTPUT_DIR/debian/control
 done
 
 # Apply patches part of the packaging process

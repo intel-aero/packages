@@ -11,3 +11,5 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Systemd bootup services
  Configure and initialize system services
+XBCS-meta-intel-aero-base-revision: {meta-intel-aero-base-rev}
+XBCS-meta-intel-aero-revision: {meta-intel-aero-rev}

@@ -11,3 +11,4 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: SPI data transfer for Intel Aero
  SPI communication for Intel Aero.
+XBCS-intel-aero-sample-apps-revision: {sample-apps-rev}

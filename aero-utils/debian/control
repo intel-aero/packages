@@ -11,3 +11,4 @@ Architecture: all
 Depends: ${misc:Depends}, bash (>=4.3), python, python-serial, aero-spi-xfer
 Description: Collection of Intel Aero RTF utilities.
  Includes several scripts and programs.
+XBCS-meta-intel-aero-base-revision: {meta-intel-aero-base-rev}

@@ -11,3 +11,4 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: BIOS Updater for Intel Aero
  BIOS binary updater for Intel Aero
+XBCS-meta-intel-aero-base-revision: {meta-intel-aero-base-rev}

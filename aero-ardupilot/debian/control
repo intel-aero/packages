@@ -13,3 +13,4 @@ Suggests: aero-utils
 Description: Ardupilot firmware for Intel Aero.
  This contains the Ardupilot specific firmware for the Intel Aero flight
  controller.
+XBCS-meta-intel-aero-base-revision: {meta-intel-aero-rev}
