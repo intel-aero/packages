@@ -1,8 +1,14 @@
+mavlink-router (1.0-6) xenial; urgency=medium
+
+  * Fix linter issue in the changelog file syntax
+
+ -- Anselmo L. S. Melo <anselmo.melo@intel.com>  Thu, 30 Nov 2017 13:16:32 -0800
+
 mavlink-router (1.0-5) xenial; urgency=medium
 
   * Remove python-pip from Build-Depends
 
- -- Ritul Jasuja<ritul.jasuja@intel.com>  Tue, 21 Nov 2017 11:18:55 +0530
+ -- Ritul Jasuja <ritul.jasuja@intel.com>  Tue, 21 Nov 2017 11:18:55 +0530
 
 mavlink-router (1.0-4) xenial; urgency=medium
 
