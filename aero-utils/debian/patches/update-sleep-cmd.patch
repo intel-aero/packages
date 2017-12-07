@@ -1,0 +1,16 @@
+Index: aero-utils-0.1/aero-led-ctrl
+===================================================================
+--- aero-utils-0.1.orig/aero-led-ctrl
++++ aero-utils-0.1/aero-led-ctrl
+@@ -15,9 +15,9 @@ off() {
+ shutdown_seq() {
+   for i in $(seq 1 1 5); do
+     echo 1 > /sys/class/gpio/gpio$LED_gpio/value
+-    usleep 50000
++    sleep 0.05
+     echo 0 > /sys/class/gpio/gpio$LED_gpio/value
+-    usleep 50000
++    sleep 0.05
+   done
+   echo 1 > /sys/class/gpio/gpio$LED_gpio/value
+ }
