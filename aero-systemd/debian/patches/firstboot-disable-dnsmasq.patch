@@ -1,5 +1,7 @@
---- a/firstboot-networkmanager-setup
-+++ b/firstboot-networkmanager-setup
+Index: aero-systemd-0.1/firstboot-networkmanager-setup
+===================================================================
+--- aero-systemd-0.1.orig/firstboot-networkmanager-setup
++++ aero-systemd-0.1/firstboot-networkmanager-setup
 @@ -25,7 +25,7 @@ while [ 1 ]; do
  done
  
