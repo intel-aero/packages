@@ -1,5 +1,7 @@
---- a/aero-bios-update
-+++ b/aero-bios-update
+Index: aero-utils-0.1/aero-bios-update
+===================================================================
+--- aero-utils-0.1.orig/aero-bios-update
++++ aero-utils-0.1/aero-bios-update
 @@ -9,7 +9,7 @@ usage() {
  
  bios=${1:-/etc/bios/BIOSUPDATE.fv}

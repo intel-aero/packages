@@ -100,14 +100,7 @@ for REV in $BUILD_DIR/*-rev; do
 	sed -i 's/{'$(basename $REV)'}/'$(cat $REV)'/' $PKG_OUTPUT_DIR/debian/control
 done
 
-# Apply patches part of the packaging process
 cd $PKG_OUTPUT_DIR
-if [ -d "$PKG_PATH/patches" ]; then
-	for PATCH in $PKG_PATH/patches/*.patch; do
-		patch -p1 < $PATCH || exit 1
-	done
-fi
-
 # Create the source tar ball
 tar caf ../"$PKG_DEBIAN_NAME"_"$PKG_VERSION".orig.tar.xz . --exclude debian || exit 1
 

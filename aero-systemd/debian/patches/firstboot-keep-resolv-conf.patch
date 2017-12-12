@@ -1,5 +1,7 @@
---- a/firstboot-networkmanager-setup
-+++ b/firstboot-networkmanager-setup
+Index: aero-systemd-0.1/firstboot-networkmanager-setup
+===================================================================
+--- aero-systemd-0.1.orig/firstboot-networkmanager-setup
++++ aero-systemd-0.1/firstboot-networkmanager-setup
 @@ -30,7 +30,7 @@ systemctl stop dnsmasq || /bin/true
  
  # systemd is creating this file as symbolic link and taking care of if, not
