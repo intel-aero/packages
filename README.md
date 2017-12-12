@@ -18,7 +18,7 @@
 
 ### Individual packages
 
-You can build individual patches by executing:
+You can build individual packages by executing:
 
 ```
 ./scripts/build-pkg.sh PACKAGE-NAME
