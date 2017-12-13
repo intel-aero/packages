@@ -44,3 +44,8 @@ using Debian helper tools (thus, it requires such tools available in your system
 ## Updating meta-intel-aero and mavlink-router revisions
 
 New revisions sha1 must be added to the configuration file scripts/conf.
+
+## Camera Streaming Daemon
+Install librealsense alongwith Camera streaming daemon package(aero-camera-streaming-daemon) from:
+			https://github.com/IntelRealSense/librealsense
+For RS200, install the legacy branch of librealsense(librealsense v1)

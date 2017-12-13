@@ -1,0 +1,4 @@
+SRCURL="$GH_01ORG_CAMERA_STREAMING_DAEMON_URL|$GH_01ORG_CAMERA_STREAMING_DAEMON_REV \
+        $GH_INTEL_AERO_META_INTEL_AERO_URL|$GH_INTEL_AERO_META_INTEL_AERO_REV"
+SRCPATH="./src/camera-streaming-daemon/* \
+         ./src/meta-intel-aero/recipes-support/camera-streaming-daemon/files/*"

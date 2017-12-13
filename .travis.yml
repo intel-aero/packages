@@ -4,7 +4,7 @@ services: docker
 
 before_install:
  - CONTAINER=$(docker run -it -d -v $PWD:/build ubuntu:16.04 /bin/bash)
- - docker exec -i $CONTAINER /bin/bash -c "apt-get update -qq && apt-get install -y -qq gnupg git equivs lintian devscripts build-essential bc python-future dh-systemd dh-autoreconf wget libglfw3-dev cmake pkg-config libusb-1.0-0-dev"
+ - docker exec -i $CONTAINER /bin/bash -c "apt-get update -qq && apt-get install -y -qq gnupg git equivs lintian devscripts build-essential bc python-future dh-systemd dh-autoreconf wget libglfw3-dev cmake pkg-config libusb-1.0-0-dev libavahi-client-dev libavahi-core-dev libavahi-glib-dev gstreamer-1.0 libgstreamer-plugins-base1.0-dev libgstrtspserver-1.0-dev"
  - docker exec -i $CONTAINER /bin/bash -c "git clone git://github.com/IntelRealSense/librealsense -b legacy && mkdir librealsense/build && cd librealsense/build && cmake -DBUILD_EXAMPLES=false -DBUILD_GRAPHICAL_EXAMPLES=fase -DCMAKE_INSTALL_PREFIX=/usr .. && make && make install"
 script:  
  - docker exec -i $CONTAINER /bin/bash -c "cd /build && make"

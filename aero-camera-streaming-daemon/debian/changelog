@@ -1,0 +1,5 @@
+camera-streaming-daemon (1.0-1) xenial; urgency=medium
+
+  * Initial release
+
+ -- Ritul Jasuja <ritul.jasuja@intel.com>  Thu, 9 Nov 2017 10:09:28 -0700
