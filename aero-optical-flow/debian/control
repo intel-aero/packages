@@ -1,0 +1,13 @@
+Source: aero-optical-flow
+Section: net
+Priority: optional
+Maintainer: Ritul Jasuja <ritul.jasuja@intel.com>
+Build-Depends: debhelper (>=9), dh-systemd (>= 1.5), dh-autoreconf, git, libopencv-dev, python-opencv
+Standards-Version: 3.9.7
+Homepage: https://github.com/intel-aero/aero-optical-flow
+
+Package: aero-optical-flow
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: enable optical-flow sensor 
+ Aero optical flow
