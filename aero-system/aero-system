@@ -6,7 +6,7 @@ Standards-Version: 3.9.2
 Package: aero-system
 Version: 1.0.8
 Maintainer: Daniel E Ruano <daniel.e.ruano@intel.com>
-Depends: linux-image-4.4.76-aero-1.2, linux-headers-4.4.76-aero-1.2, aero-mavlink-router, aero-fpga, aero-px4, aero-ardupilot, aero-utils, aero-init, aero-bios, openssh-server, i2c-tools, firmware-atomisp, aero-systemd, aero-camera-streaming-daemon
+Depends: linux-image-4.4.76-aero-1.2, linux-headers-4.4.76-aero-1.2, aero-mavlink-router, aero-fpga, aero-px4, aero-ardupilot, aero-utils, aero-init, aero-bios, openssh-server, i2c-tools, firmware-atomisp, aero-systemd, aero-camera-streaming-daemon, aero-optical-flow
 Description: Collection of Intel Aero packages.
  This collection of Intel Aero packages includes all necessary programs and
  utilities to use the Intel Aero RTF drone on Ubuntu.

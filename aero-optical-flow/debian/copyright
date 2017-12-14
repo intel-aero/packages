@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: aero-optical-flow
+Source: https://github.com/01org/aero-optical-flow
+
+Files: *
+Copyright: 2017 Intel Corporation
+License: Apache-2.0
+ /usr/share/common-licenses/Apache-2.0

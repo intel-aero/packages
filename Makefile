@@ -6,7 +6,8 @@ camera-streaming-daemon-rev = master
 
 .PHONY: clean cleanall collect ppa aero-system kernel
 
-PACKAGES = ardupilot bios fpga px4 init spi-xfer systemd utils mavlink-router camera-streaming-daemon
+PACKAGES = ardupilot bios fpga px4 init spi-xfer systemd utils mavlink-router camera-streaming-daemon optical-flow
+
 AEROPKGS := $(foreach p, $(PACKAGES), build/aero-$p_*.deb) build/firmware-atomisp_*.deb
 
 all: aero-packages kernel
