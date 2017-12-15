@@ -1,5 +1,5 @@
 meta-intel-aero-rev = 70cee044b251c1376732fe07ee359e9d93149f5f
-meta-intel-aero-base-rev = 0c9f7a359c71f3c8b9f47efede194da51ccaefd7
+meta-intel-aero-base-rev = 051ab4f3ebc9798a2d2d234487e9c92d8b3894c2
 sample-apps-rev = master
 mavlink-router-rev = master
 camera-streaming-daemon-rev = master

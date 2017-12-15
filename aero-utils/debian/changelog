@@ -1,3 +1,9 @@
+aero-utils (0.1-6) xenial; urgency=medium
+
+  * Update meta-intel-aero-base revision
+
+ -- Avinash Reddy Palleti <avinash.reddy.palleti@intel.com>  Fri, 15 Dec 2017 14:15:51 +0530
+
 aero-utils (0.1-5) xenial; urgency=medium
 
   * Update patches to be applied
