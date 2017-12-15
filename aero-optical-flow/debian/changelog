@@ -1,3 +1,9 @@
+aero-optical-flow (1.0-2) xenial; urgency=medium
+
+  *Updated meta information
+
+ -- Ritul Jasuja <ritul.jasuja@intel.com>  Fri, 15 Dec 2017 08:47:34 +0530
+
 aero-optical-flow (1.0-1) xenial; urgency=medium
 
   * Initial release

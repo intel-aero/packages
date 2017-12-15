@@ -1,4 +1,5 @@
 Source: camera-streaming-daemon
+Section: embedded
 Priority: optional
 Maintainer: Ritul Jasuja <ritul.jasuja@intel.com>
 Build-Depends: debhelper (>=9), dh-systemd (>= 1.5), dh-autoreconf, git, python-future, libavahi-client-dev, libavahi-core-dev, libavahi-glib-dev, libqt5gstreamer-1.0-0, libgstreamer-plugins-base1.0-dev, libgstrtspserver-1.0-dev
