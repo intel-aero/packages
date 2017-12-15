@@ -1,5 +1,5 @@
 Source: aero-optical-flow
-Section: net
+Section: embedded
 Priority: optional
 Maintainer: Ritul Jasuja <ritul.jasuja@intel.com>
 Build-Depends: debhelper (>=9), dh-systemd (>= 1.5), dh-autoreconf, git, libopencv-dev, python-opencv
