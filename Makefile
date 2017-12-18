@@ -1,9 +1,3 @@
-meta-intel-aero-rev = 70cee044b251c1376732fe07ee359e9d93149f5f
-meta-intel-aero-base-rev = 051ab4f3ebc9798a2d2d234487e9c92d8b3894c2
-sample-apps-rev = master
-mavlink-router-rev = master
-camera-streaming-daemon-rev = master
-
 .PHONY: clean cleanall collect ppa aero-system kernel
 
 PACKAGES = ardupilot bios fpga px4 init spi-xfer systemd utils mavlink-router camera-streaming-daemon optical-flow
