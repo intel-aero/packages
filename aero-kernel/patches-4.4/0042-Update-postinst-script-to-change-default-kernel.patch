@@ -16,7 +16,7 @@ index 6c3b038..98e98ae 100755
  for script in postinst postrm preinst prerm ; do
  	mkdir -p "$tmpdir$debhookdir/$script.d"
 +if [ $script == "postinst" ]; then
-+	grub_string="sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=\"Advanced options for Ubuntu>Ubuntu, with Linux 4.4.76-aero-1.2\"/' /etc/default/grub 
++	grub_string="sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=\"Advanced options for Ubuntu>Ubuntu, with Linux 4.4.76-aero-1.3\"/' /etc/default/grub 
 +sed -i 's/GRUB_HIDDEN_TIMEOUT=0/#GRUB_HIDDEN_TIMEOUT=0/' /etc/default/grub
 +update-grub" 
 +else

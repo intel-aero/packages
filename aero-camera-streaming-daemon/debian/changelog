@@ -1,3 +1,9 @@
+camera-streaming-daemon (1.0-3) xenial; urgency=medium
+
+  * Bump pkg version
+
+ -- Avinash Reddy Palleti <avinash.reddy.palleti@intel.com>  Fri, 29 Dec 2017 08:18:14 +0530
+
 camera-streaming-daemon (1.0-2) xenial; urgency=medium
 
   *Updated meta information
