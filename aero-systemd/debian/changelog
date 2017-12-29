@@ -1,3 +1,9 @@
+aero-systemd (0.1-5) xenial; urgency=medium
+
+  * Bump pkg version
+
+ -- Avinash Reddy Palleti <avinash.reddy.palleti@intel.com>  Fri, 29 Dec 2017 08:35:38 +0530
+
 aero-systemd (0.1-4) xenial; urgency=medium
 
   * Update patches to be applied

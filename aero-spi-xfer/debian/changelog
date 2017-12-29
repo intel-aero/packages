@@ -1,3 +1,9 @@
+aero-spi-xfer (0.1-5) xenial; urgency=medium
+
+  * Bump pkg version
+
+ -- Avinash Reddy Palleti <avinash.reddy.palleti@intel.com>  Fri, 29 Dec 2017 08:34:49 +0530
+
 aero-spi-xfer (0.1-4) xenial; urgency=medium
 
   * Fix dependency list

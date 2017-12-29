@@ -1,3 +1,9 @@
+mavlink-router (1.0-7) xenial; urgency=medium
+
+  * Bump pkg version
+
+ -- Avinash Reddy Palleti <avinash.reddy.palleti@intel.com>  Fri, 29 Dec 2017 13:16:32 -0800
+
 mavlink-router (1.0-6) xenial; urgency=medium
 
   * Fix linter issue in the changelog file syntax
