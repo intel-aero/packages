@@ -1,3 +1,4 @@
 firstboot-disable-dnsmasq.patch
 firstboot-keep-resolv-conf.patch
 firstboot-modem-apn.patch
+default-managed-mode.patch

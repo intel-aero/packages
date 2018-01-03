@@ -1,3 +1,9 @@
+aero-systemd (0.1-6) xenial; urgency=medium
+
+  * Update firstboot-networkmanager-setup to change default mode to managed
+
+ -- Avinash Reddy Palleti <avinash.reddy.palleti@intel.com>  Wed, 03 Jan 2018 11:33:40 +0530
+
 aero-systemd (0.1-5) xenial; urgency=medium
 
   * Bump pkg version
