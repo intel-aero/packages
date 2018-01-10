@@ -6,3 +6,4 @@ aero-get-version.py usr/sbin
 #aero-reboot-update.py usr/sbin
 aero-bios-update usr/sbin
 aerofc-force-bootloader-pin.py usr/sbin
+aerofc-get-version.py usr/sbin
