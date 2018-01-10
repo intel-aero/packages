@@ -13,3 +13,9 @@ Description: routes MAVLink packets
  mavlink-router moves MAVLink packets between network and physical interfaces.
 XBCS-mavlink-router-revision: {mavlink-router-rev}
 XBCS-meta-intel-aero-revision: {meta-intel-aero-rev}
+
+Package: aero-mavlink-router-samples
+Architecture: any
+Depends: ${misc:Depends}, python, aero-mavlink-router
+Description: Sample apps for Mavlink router
+ Provides sample applications for Mavlink-router

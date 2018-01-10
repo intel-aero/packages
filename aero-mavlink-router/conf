@@ -1,4 +1,5 @@
 SRCURL="$GH_01ORG_MAVLINK_ROUTER_URL|$GH_01ORG_MAVLINK_ROUTER_REV \
         $GH_INTEL_AERO_META_INTEL_AERO_URL|$GH_INTEL_AERO_META_INTEL_AERO_REV"
 SRCPATH="./src/mavlink-router/* \
-         ./src/meta-intel-aero/recipes-support/mavlink-router/files/*"
+         ./src/meta-intel-aero/recipes-support/mavlink-router/files/* \
+         ./src/mavlink-router/examples/*"
