@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+chmod 755 /usr/share/mavlink-router/sender.py
+chmod 755 /usr/share/mavlink-router/receiver.py
+chmod 755 /usr/share/mavlink-router/arm.py
+chmod 755 /usr/share/mavlink-router/heartbeat-print.py
+chmod 755 /usr/share/mavlink-router/heartbeat-print-tcp.py
+#DEBHELPER#
