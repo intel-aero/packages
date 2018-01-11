@@ -6,11 +6,15 @@ AEROPKGS := $(foreach p, $(PACKAGES), build/aero-$p_*.deb) build/firmware-atomis
 
 all: aero-packages kernel
 
-aero-packages: $(AEROPKGS) aero-system
+aero-packages: $(AEROPKGS) aero-system aero-sample-apps
 
 build/aero-system_*.deb:
 	mkdir -p build
 	cd build && equivs-build ../aero-system/aero-system
+
+build/aero-sample-apps_*.deb:
+	mkdir -p build
+	cd build && equivs-build ../aero-sample-apps/aero-sample-apps
 
 build/linux-image*.deb:
 	./scripts/build-kernel.sh
@@ -37,3 +41,5 @@ ppa:
 	cp build/*.dsc build/*.changes build/*.debian.tar.* ppa/
 
 aero-system: build/aero-system_*.deb
+
+aero-sample-apps: build/aero-sample-apps_*.deb

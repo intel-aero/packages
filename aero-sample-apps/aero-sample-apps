@@ -1,0 +1,11 @@
+Section: misc
+Priority: optional
+Homepage: https://github.com/intel-aero/sample-apps
+Standards-Version: 3.9.2
+
+Package: aero-sample-apps
+Version: 1.0.1
+Maintainer: Avinash Reddy Palleti <avinash.reddy.palleti@intel.com>
+Depends: ros-kinetic-aero-flight-modes, ros-kinetic-aero-offboard-ctrl, ros-kinetic-aero-telemetry-simple, ros-kinetic-aero-fly-mission, ros-kinetic-aero-takeoff-land
+Description: Collection of Sample applications that can be run on Aero.
+ This collection of Intel Aero sample application packages includes ROS samples to use the Intel Aero RTF drone on Ubuntu.
