@@ -1,3 +1,9 @@
+aero-utils (0.1-8) xenial; urgency=medium
+
+  * Add aerofc-get-version.py
+
+ -- Ritul Jasuja <ritul.jasuja@intel.com>  Wed, 10 Jan 2018 13:34:16 +0530
+
 aero-utils (0.1-7) xenial; urgency=medium
 
   * Bump pkg version
