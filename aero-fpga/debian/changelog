@@ -1,3 +1,9 @@
+aero-fpga (0.1-5) xenial; urgency=medium
+
+  * Update dependency to support i386 build
+
+ -- Avinash Reddy Palleti <avinash.reddy.palleti@intel.com>  Fri, 19 Jan 2018 14:10:58 +0530
+
 aero-fpga (0.1-4) xenial; urgency=medium
 
   * Bump pkg version
