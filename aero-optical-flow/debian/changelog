@@ -1,3 +1,9 @@
+aero-optical-flow (1.0-4) xenial; urgency=medium
+
+  * Update dependency list to support PPA
+
+ -- Avinash Reddy Palleti <avinash.reddy.palleti@intel.com>  Fri, 19 Jan 2018 14:06:43 +0530
+
 aero-optical-flow (1.0-3) xenial; urgency=medium
 
   * Bump pkg version
