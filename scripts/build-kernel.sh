@@ -44,4 +44,8 @@ done
 touch .scmversion
 cp $ROOTDIR/aero-kernel/patches-4.4/defconfig .config
 yes '' | make oldconfig
-make deb-pkg -j5
+rm -rf debian/
+cp -rf $ROOTDIR/aero-kernel/debian ./debian
+dpkg-buildpackage -S
+mkdir -p $ROOTDIR/kernel-ppa && cd $ROOTDIR/build/ && cp linux*.changes linux*.dsc linux*.tar.gz $ROOTDIR/kernel-ppa
+cd $ROOTDIR/build/linux-4.4 && make deb-pkg -j5
