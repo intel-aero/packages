@@ -105,4 +105,4 @@ cd $PKG_OUTPUT_DIR
 tar caf ../"$PKG_DEBIAN_NAME"_"$PKG_VERSION".orig.tar.xz . --exclude debian || exit 1
 
 # Generate package
-debuild -us -uc || exit 1
+debuild -uc -us -S -sa || exit 1
