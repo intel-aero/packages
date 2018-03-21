@@ -38,7 +38,7 @@ collect:
 ppa:
 	rm -rf ppa
 	mkdir ppa
-	cp build/*.dsc build/*.changes build/*.debian.tar.* ppa/
+	cp build/*.dsc build/*.changes build/*.tar.* ppa/
 
 aero-system: build/aero-system_*.deb
 
