@@ -11,6 +11,15 @@
 ### Only the Linux kernel 4.4 with patches
 
 `make kernel`
+After kernel build is performed successfully, debian packages will be created in `build` folder.
+Also, source.changes file, dsc file and source tar file will be placed under `kernel-ppa` folder.
+To Upload the generated packages to PPA,
+- Sign the source.changes using :
+`debsign -k <gpg_key> <linux_<version>_source.changes>`
+- Upload the file after signing by :
+`dput <ppa-repository> <linux_<version>_source.changes>`
+File will be successfully uploaded to the `ppa-repository` and build process will be started.
+After build is completed, debian packages can be downloaded and installed.
 
 ### All aero-* packages except the kernel
 
