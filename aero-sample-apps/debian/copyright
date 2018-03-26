@@ -1,0 +1,4 @@
+Files: debian/*
+Copyright: 2018 Intel Corporation
+License: Apache-2.0
+ /usr/share/common-licenses/Apache-2.0
