@@ -1,3 +1,8 @@
+aero-system (1.0-12) xenial; urgency=medium
+
+  * Update linux package version
+
+ -- Avinash Reddy Palleti <avinash.reddy.palleti@intel.com>  Tue, 03 Apr 2018 08:21:18 +0530
 aero-system (1.0-11) xenial; urgency=medium
 
   * Initial version
