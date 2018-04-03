@@ -19,7 +19,7 @@
 PKG_NAME=$1
 SCRIPT_DIR="$(dirname $(readlink -f $0))"
 GLOBAL_CONF_PATH=$SCRIPT_DIR
-
+declare -A VIRTUAL_PACK=([aero-system]=1 [aero-sample-apps]=1)
 if [ "$PWD/scripts" != $SCRIPT_DIR ]; then
     echo "Please run $(basename $0) from the project root directory"
 	exit 1
@@ -35,24 +35,25 @@ if [ ! -d "$PKG_NAME" ]; then
 	echo "Package dir $PKG_NAME not found"
 	exit 1
 fi
+if [[ ! ${VIRTUAL_PACK[$PKG_NAME]} ]]; then
 
-if [ ! -e $PKG_NAME/conf ]; then
-	echo "$PKG_NAME/url file not found"
-	exit 1
+	if [ ! -e $PKG_NAME/conf ]; then
+		echo "$PKG_NAME/url file not found"
+		exit 1
+	fi
+
+	PKG_PATH=$PWD/$PKG_NAME
+
+	source $GLOBAL_CONF_PATH/conf
+	source $PKG_NAME/conf
+
+	if [ -z "$SRCPATH" ] || [ -z "$SRCURL" ]; then
+		echo "Missing info in conf file: $PKG_NAME/conf"
+		[ -z "$SRCPATH" ] || echo "SRCPATH"
+		[ -z "$SRCURL" ] || echo "SRCURL"
+		exit 1
+	fi
 fi
-
-PKG_PATH=$PWD/$PKG_NAME
-
-source $GLOBAL_CONF_PATH/conf
-source $PKG_NAME/conf
-
-if [ -z "$SRCPATH" ] || [ -z "$SRCURL" ]; then
-	echo "Missing info in conf file: $PKG_NAME/conf"
-	[ -z "$SRCPATH" ] || echo "SRCPATH"
-	[ -z "$SRCURL" ] || echo "SRCURL"
-	exit 1
-fi
-
 CONF_SRC_PATH=$SRCPATH
 CONF_SRC_URL=$SRCURL
 
