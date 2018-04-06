@@ -1,20 +1,12 @@
 .PHONY: clean cleanall collect ppa aero-system kernel
 
-PACKAGES = ardupilot bios fpga px4 init spi-xfer systemd utils mavlink-router camera-streaming-daemon optical-flow
+PACKAGES = ardupilot bios fpga px4 init spi-xfer systemd utils mavlink-router camera-streaming-daemon optical-flow system sample-apps
 
 AEROPKGS := $(foreach p, $(PACKAGES), build/aero-$p_*.deb) build/firmware-atomisp_*.deb
 
 all: aero-packages kernel
 
-aero-packages: $(AEROPKGS) aero-system aero-sample-apps
-
-build/aero-system_*.deb:
-	mkdir -p build
-	cd build && equivs-build ../aero-system/aero-system
-
-build/aero-sample-apps_*.deb:
-	mkdir -p build
-	cd build && equivs-build ../aero-sample-apps/aero-sample-apps
+aero-packages: $(AEROPKGS)
 
 build/linux-image*.deb:
 	./scripts/build-kernel.sh
@@ -40,6 +32,3 @@ ppa:
 	mkdir ppa
 	cp build/*.dsc build/*.changes build/*.tar.* ppa/
 
-aero-system: build/aero-system_*.deb
-
-aero-sample-apps: build/aero-sample-apps_*.deb
